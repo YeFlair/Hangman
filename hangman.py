@@ -18,6 +18,7 @@ while not end_of_game: #Loops Through Process Untill User Wins / Loses
         letter = chosen_word[position] #Indentifies The Letter's Index
         if letter == guess:
             display[position] = letter #Replaces The Blank Space With letter That Matches Proper Index
+    print(f"{' '.join(display)}") #Prints Letter At Proper Index Location 
     
     if guess not in chosen_word:
         print(f"{guess} is not in word! you lose a life.")
@@ -25,7 +26,6 @@ while not end_of_game: #Loops Through Process Untill User Wins / Loses
         if lives == 0: #When Lives Are At 0 The Game Would End
             end_of_game == True
             print("You Lose.")
-    print(f"{' '.join(display)}") #Prints Letter At Proper Index Location 
 
     if "_" not in display: #Checks If Theres No More Empty Spaces
         end_of_game = True
