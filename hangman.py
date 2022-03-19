@@ -7,7 +7,7 @@ end_of_game = False
 display = [] # Empty List To Store Blank Spaces And Guessed Letter " _ _ a _ _"
 for _ in range(len(chosen_word)): #Looping Through The Lenth Of The Word To Get The Number Of Needed Blank Spaces
     display += "_" #Stores A _ After Each Loop 
-# print(display) #Displays Total Number OF Spaces 
+print(f"Word: {display}") #Displays Total Number OF Spaces 
 
 while not end_of_game: #Loops Through Process Untill User Wins / Loses 
     guess = input("Enter A Letter: ").lower() #Gets User Answer And Automates The Answer To Lower Case 
@@ -19,13 +19,14 @@ while not end_of_game: #Loops Through Process Untill User Wins / Loses
         if letter == guess:
             display[position] = letter #Replaces The Blank Space With letter That Matches Proper Index
     print(f"{' '.join(display)}") #Prints Letter At Proper Index Location 
-    
+
     if guess not in chosen_word:
         print(f"{guess} is not in word! you lose a life.")
         lives -= 1 #Reduces Lives When Guessed Letter Is Wrong 
-        if lives == 0: #When Lives Are At 0 The Game Would End
+        if lives == 0: #When Lives Are At 0 The Game Would End 
             end_of_game == True
-            print("You Lose.")
+            print(f"You Lose - Word was {chosen_word} ")
+            break
 
     if "_" not in display: #Checks If Theres No More Empty Spaces
         end_of_game = True
